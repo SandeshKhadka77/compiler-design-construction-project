@@ -17,7 +17,7 @@ frontend/
 
 ## Current Phase
 
-Phase 2 configures the C++ backend build and verifies the local compiler environment. Compiler functionality, the HTTP server, and frontend integration will be added in later phases.
+Phase 3 implements the initial token system and verifies it with a CTest test. Lexing, parsing, the HTTP server, and frontend integration will be added in later phases.
 
 ## C++ Environment
 
@@ -50,3 +50,9 @@ cmake --build build
 ```
 
 The exact executable path can vary by generator and configuration.
+
+## Run Tests
+
+```powershell
+ctest --test-dir build --output-on-failure
+```
