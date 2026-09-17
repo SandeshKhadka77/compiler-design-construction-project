@@ -6,9 +6,13 @@ An educational compiler frontend project using C++ for the compiler logic and HT
 
 ```text
 backend/
-  include/       Header files
-  src/           C++ source files
-  tests/         Backend tests
+  include/
+    token.h      Token types and token structure
+  src/
+    main.cpp     Backend entry point
+    token.cpp    Token type implementation
+  tests/
+    token_test.cpp
 frontend/
   index.html     Frontend entry point
   css/           Stylesheets
@@ -44,12 +48,12 @@ Mini Compiler Backend - Phase 2 setup complete.
 After installing CMake:
 
 ```powershell
-cmake -S . -B build
+cmake -S . -B build -G "MinGW Makefiles"
 cmake --build build
-./build/Debug/mini_compiler.exe
+./build/mini_compiler.exe
 ```
 
-The exact executable path can vary by generator and configuration.
+The `build/` directory is local generated output and is ignored by Git.
 
 ## Run Tests
 
