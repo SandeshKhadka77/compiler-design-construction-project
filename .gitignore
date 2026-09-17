@@ -1,0 +1,22 @@
+# CMake build output
+build/
+cmake-build-*/
+
+# Compiled binaries and object files
+*.exe
+*.out
+*.o
+*.obj
+*.a
+*.lib
+
+# IDE and editor files
+.vscode/
+.idea/
+
+
+.github/copilot-instructions.md
+
+# Operating system files
+.DS_Store
+Thumbs.db
