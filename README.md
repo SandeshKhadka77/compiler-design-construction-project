@@ -6,13 +6,13 @@ An educational compiler frontend project using C++ for the compiler logic and HT
 
 ```text
 backend/
-	include/       Header files
-	src/           C++ source files
-	tests/         Backend tests
+  include/       Header files
+  src/           C++ source files
+  tests/         Backend tests
 frontend/
-	index.html     Frontend entry point
-	css/           Stylesheets
-	js/            JavaScript files
+  index.html     Frontend entry point
+  css/           Stylesheets
+  js/            JavaScript files
 ```
 
 ## Current Phase
@@ -33,7 +33,11 @@ g++ -std=c++17 -Wall -Wextra -pedantic backend/src/main.cpp -o build/mini_compil
 ./build/mini_compiler.exe
 ```
 
-Expected output depends on the current backend entry point.
+Expected output:
+
+```text
+Mini Compiler Backend - Phase 2 setup complete.
+```
 
 ## CMake Build
 

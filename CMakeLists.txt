@@ -13,3 +13,9 @@ add_executable(mini_compiler
 target_include_directories(mini_compiler PRIVATE
     backend/include
 )
+
+if(MSVC)
+    target_compile_options(mini_compiler PRIVATE /W4)
+else()
+    target_compile_options(mini_compiler PRIVATE -Wall -Wextra -pedantic)
+endif()
