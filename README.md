@@ -1,0 +1,48 @@
+# Mini Compiler Frontend
+
+An educational compiler frontend project using C++ for the compiler logic and HTML, CSS, and JavaScript for the future web interface.
+
+## Project Structure
+
+```text
+backend/
+	include/       Header files
+	src/           C++ source files
+	tests/         Backend tests
+frontend/
+	index.html     Frontend entry point
+	css/           Stylesheets
+	js/            JavaScript files
+```
+
+## Current Phase
+
+Phase 2 configures the C++ backend build and verifies the local compiler environment. Compiler functionality, the HTTP server, and frontend integration will be added in later phases.
+
+## C++ Environment
+
+The current development environment uses MinGW GCC. CMake is the intended build-system entry point, but it must be installed separately and added to `PATH` before CMake commands can be used.
+
+## Build and Run with MinGW
+
+From the project root in PowerShell:
+
+```powershell
+New-Item -ItemType Directory -Force build | Out-Null
+g++ -std=c++17 -Wall -Wextra -pedantic backend/src/main.cpp -o build/mini_compiler.exe
+./build/mini_compiler.exe
+```
+
+Expected output depends on the current backend entry point.
+
+## CMake Build
+
+After installing CMake:
+
+```powershell
+cmake -S . -B build
+cmake --build build
+./build/Debug/mini_compiler.exe
+```
+
+The exact executable path can vary by generator and configuration.
