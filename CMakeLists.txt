@@ -12,6 +12,7 @@ add_executable(mini_compiler
     backend/src/ast.cpp
     backend/src/lexer.cpp
     backend/src/main.cpp
+    backend/src/parser.cpp
     backend/src/token.cpp
 )
 
@@ -76,3 +77,23 @@ else()
 endif()
 
 add_test(NAME ast_test COMMAND ast_test)
+
+add_executable(parser_test
+    backend/tests/parser_test.cpp
+    backend/src/ast.cpp
+    backend/src/lexer.cpp
+    backend/src/parser.cpp
+    backend/src/token.cpp
+)
+
+target_include_directories(parser_test PRIVATE
+    backend/include
+)
+
+if(MSVC)
+    target_compile_options(parser_test PRIVATE /W4)
+else()
+    target_compile_options(parser_test PRIVATE -Wall -Wextra -pedantic)
+endif()
+
+add_test(NAME parser_test COMMAND parser_test)

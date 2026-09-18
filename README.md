@@ -10,15 +10,18 @@ backend/
     token.h      Token types and token structure
     lexer.h      Lexer interface and lexical errors
     ast.h        Abstract syntax tree structures
+    parser.h     Parser interface and syntax errors
   src/
     main.cpp     Backend entry point
     token.cpp    Token type implementation
     lexer.cpp    Lexical analyzer implementation
     ast.cpp      Abstract syntax tree implementation
+    parser.cpp   Recursive-descent parser implementation
   tests/
     token_test.cpp
     lexer_test.cpp
     ast_test.cpp
+    parser_test.cpp
 frontend/
   index.html     Frontend entry point
   css/           Stylesheets
@@ -27,7 +30,7 @@ frontend/
 
 ## Current Phase
 
-Phase 5 defines the abstract syntax tree and verifies its basic structure with CTest. Parsing, semantic analysis, the HTTP server, and frontend integration will be added in later phases.
+Phase 6 implements the parser and verifies statements, expressions, and syntax errors with CTest. Semantic analysis, the HTTP server, and frontend integration will be added in later phases.
 
 ## C++ Environment
 
