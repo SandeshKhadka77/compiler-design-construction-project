@@ -9,6 +9,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(mini_compiler
+    backend/src/ast.cpp
+    backend/src/lexer.cpp
     backend/src/main.cpp
     backend/src/token.cpp
 )
@@ -39,3 +41,38 @@ else()
 endif()
 
 add_test(NAME token_system_test COMMAND token_test)
+
+add_executable(lexer_test
+    backend/tests/lexer_test.cpp
+    backend/src/lexer.cpp
+    backend/src/token.cpp
+)
+
+target_include_directories(lexer_test PRIVATE
+    backend/include
+)
+
+if(MSVC)
+    target_compile_options(lexer_test PRIVATE /W4)
+else()
+    target_compile_options(lexer_test PRIVATE -Wall -Wextra -pedantic)
+endif()
+
+add_test(NAME lexer_test COMMAND lexer_test)
+
+add_executable(ast_test
+    backend/tests/ast_test.cpp
+    backend/src/ast.cpp
+)
+
+target_include_directories(ast_test PRIVATE
+    backend/include
+)
+
+if(MSVC)
+    target_compile_options(ast_test PRIVATE /W4)
+else()
+    target_compile_options(ast_test PRIVATE -Wall -Wextra -pedantic)
+endif()
+
+add_test(NAME ast_test COMMAND ast_test)

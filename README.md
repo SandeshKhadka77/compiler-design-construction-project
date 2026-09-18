@@ -8,11 +8,17 @@ An educational compiler frontend project using C++ for the compiler logic and HT
 backend/
   include/
     token.h      Token types and token structure
+    lexer.h      Lexer interface and lexical errors
+    ast.h        Abstract syntax tree structures
   src/
     main.cpp     Backend entry point
     token.cpp    Token type implementation
+    lexer.cpp    Lexical analyzer implementation
+    ast.cpp      Abstract syntax tree implementation
   tests/
     token_test.cpp
+    lexer_test.cpp
+    ast_test.cpp
 frontend/
   index.html     Frontend entry point
   css/           Stylesheets
@@ -21,11 +27,11 @@ frontend/
 
 ## Current Phase
 
-Phase 3 implements the initial token system and verifies it with a CTest test. Lexing, parsing, the HTTP server, and frontend integration will be added in later phases.
+Phase 5 defines the abstract syntax tree and verifies its basic structure with CTest. Parsing, semantic analysis, the HTTP server, and frontend integration will be added in later phases.
 
 ## C++ Environment
 
-The current development environment uses MinGW GCC. CMake is the intended build-system entry point, but it must be installed separately and added to `PATH` before CMake commands can be used.
+The current development environment uses MinGW GCC and CMake.
 
 ## Build and Run with MinGW
 
@@ -37,11 +43,8 @@ g++ -std=c++17 -Wall -Wextra -pedantic backend/src/main.cpp -o build/mini_compil
 ./build/mini_compiler.exe
 ```
 
-Expected output:
+Expected output depends on the current backend entry point.
 
-```text
-Mini Compiler Backend - Phase 2 setup complete.
-```
 
 ## CMake Build
 
