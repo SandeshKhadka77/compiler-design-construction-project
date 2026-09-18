@@ -9,13 +9,16 @@ backend/
   include/
     token.h      Token types and token structure
     lexer.h      Lexer interface and lexical errors
+    ast.h        Abstract syntax tree structures
   src/
     main.cpp     Backend entry point
     token.cpp    Token type implementation
     lexer.cpp    Lexical analyzer implementation
+    ast.cpp      Abstract syntax tree implementation
   tests/
     token_test.cpp
     lexer_test.cpp
+    ast_test.cpp
 frontend/
   index.html     Frontend entry point
   css/           Stylesheets
@@ -24,7 +27,7 @@ frontend/
 
 ## Current Phase
 
-Phase 4 implements the lexical analyzer and verifies it with CTest. Parsing, semantic analysis, the HTTP server, and frontend integration will be added in later phases.
+Phase 5 defines the abstract syntax tree and verifies its basic structure with CTest. Parsing, semantic analysis, the HTTP server, and frontend integration will be added in later phases.
 
 ## C++ Environment
 
