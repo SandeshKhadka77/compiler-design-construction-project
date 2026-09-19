@@ -11,17 +11,24 @@ backend/
     lexer.h      Lexer interface and lexical errors
     ast.h        Abstract syntax tree structures
     parser.h     Parser interface and syntax errors
+    symbol_table.h
+    semantic_analyzer.h
+    ir_generator.h
   src/
     main.cpp     Backend entry point
     token.cpp    Token type implementation
     lexer.cpp    Lexical analyzer implementation
     ast.cpp      Abstract syntax tree implementation
     parser.cpp   Recursive-descent parser implementation
+    symbol_table.cpp
+    semantic_analyzer.cpp
+    ir_generator.cpp
   tests/
     token_test.cpp
     lexer_test.cpp
     ast_test.cpp
     parser_test.cpp
+    backend_pipeline_test.cpp
 frontend/
   index.html     Frontend entry point
   css/           Stylesheets
@@ -30,7 +37,7 @@ frontend/
 
 ## Current Phase
 
-Phase 6 implements the parser and verifies statements, expressions, and syntax errors with CTest. Semantic analysis, the HTTP server, and frontend integration will be added in later phases.
+The compiler backend now includes the token system, lexer, AST, parser, symbol table, semantic analyzer, and simple three-address-style intermediate representation. The HTTP server and frontend integration remain separate future phases.
 
 ## C++ Environment
 
@@ -51,7 +58,7 @@ Expected output depends on the current backend entry point.
 
 ## CMake Build
 
-After installing CMake:
+With CMake and MinGW installed:
 
 ```powershell
 cmake -S . -B build -G "MinGW Makefiles"
